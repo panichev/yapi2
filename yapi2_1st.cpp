@@ -129,6 +129,20 @@ int main() {
             }
         }
     
+            unsigned int cntLetters[8];
+        //считаем количество букв в словах до "="
+        for (int k = i; k >= 0; k--) {
+            cntLetters[k] = strlen(words[k]) - 1;
+            if (k == i) {
+                max = cntLetters[k];
+            }
+            if (i - k >= 2) {
+                if (cntLetters[k] > cntLetters[k + 1]) {
+                    max = cntLetters[k];
+                }
+            }
+        }
+    
     int scht = 0;
     while (NextSet(a, n)) {
         int ans1 = 0;
@@ -145,19 +159,7 @@ int main() {
         sizeAns = strlen(words[i + 1]) - 1;
 
         char words2[10][10];
-        unsigned int cntLetters[8];
-        //считаем количество букв в словах до "="
-        for (int k = i; k >= 0; k--) {
-            cntLetters[k] = strlen(words[k]) - 1;
-            if (k == i) {
-                max = cntLetters[k];
-            }
-            if (i - k >= 2) {
-                if (cntLetters[k] > cntLetters[k + 1]) {
-                    max = cntLetters[k];
-                }
-            }
-        }
+
 
         for (int cnt2 = cntLetters[i]; cnt2 >= 0; cnt2--) {
 
