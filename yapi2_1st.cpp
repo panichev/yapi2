@@ -2,18 +2,6 @@
 #include <stdio.h>
 #include "string.h"
 #include "time.h"
-int findBiggest(unsigned int* cntLetters, unsigned int max, int colvoSlov) {
-
-    int howM = 0;
-
-    for (int i = 0; i <= colvoSlov; i++) {
-        if (cntLetters[i] == max) howM++;
-        i++;
-    }
-
-    return howM;
-
-}
 
 int show(int* a, int n, int* numbers, int letid) {
     /* static int num=1;
@@ -118,10 +106,6 @@ int main() {
     unsigned int sizeAns = strlen(words[i]);
     int sizeAns2 = sizeAns - 1;
     unsigned int max;
-    //высчитываем кол-во единииц в "массиве-уме"
-    for (int k = 0; k < sizeAns; k++) {
-        upper[k] = 0;
-    }
     //начинвем перебирать
     i--;
     int n = 10;
