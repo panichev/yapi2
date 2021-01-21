@@ -296,10 +296,8 @@ int main() {
 
     next:
 
-        for (int k = 0; k <= letId; k++) {
-            rezmas[k] = 0;
-            rezmas2[k] = 0;
-        }
+        memset(rezmas, 0, sizeof(rezmas));
+        memset(rezmas2, 0, sizeof(rezmas2));
 
 
     }
