@@ -147,9 +147,7 @@ int main() {
     while (NextSet(a, n)) {
         int ans1 = 0;
         int ans2 = 0;
-        for (int k = 0; k <= sizeAns; k++) {
-            upper[k] = 0;
-        }
+        memset(upper, 0, sizeof(upper));
         scht++;
         show(a, n, numbers, letId);
 
