@@ -248,7 +248,9 @@ int main() {
             }
 
 
-
+            if (rezmas[sizeAns+1] != rezmas2[sizeAns+1]) {
+                goto next;
+                   }   
             sum = 0;
         }
         if (flag == 1) {
