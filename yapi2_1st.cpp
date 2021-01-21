@@ -4,25 +4,12 @@
 #include "time.h"
 
 int show(int* a, int n, int* numbers, int letid) {
-    /* static int num=1;
-     printf("%d: ",num);
-     num++;
-     if(num==1441262){
-         int j=0;
-     }
-     if(a[0]==7 && a[1]==9 && a[2]==2 && a[3]==5 && a[4]==0 && a[5]==4 && a[6]==8 && a[7]==1 && a[8]==3 && a[9]==6){
-         int j=0;
-     }
-     */
     for (int i = 0, j = 0; i < n; i++) {
-        // printf("%d", a[i]);
         if (j <= letid) {
             numbers[i] = a[i];
             j++;
         }
     }
-    //  printf("\n");
-
     return 1;
 }
 
@@ -49,7 +36,6 @@ int NextSet(int* a, int n)
     return 1;
 }
 int main() {
-    printf("Hello, World!\n");
     printf("Input expression:\n");
     char words[9][9];
     char letters[11];
@@ -108,10 +94,9 @@ int main() {
     unsigned int max;
     //начинвем перебирать
     i--;
-    int n = 10;
     int a[11];
     a[0] = 1; a[1] = 0; a[2] = 2; a[3] = 3; a[4] = 4; a[5] = 5; a[6] = 6; a[7] = 7; a[8] = 8; a[9] = 9;
-    show(a, n, numbers, letId);
+    show(a, 10, numbers, letId);
     
         int noSwap;
         for (int k = i; k >= 0; k--)
@@ -143,13 +128,11 @@ int main() {
             }
         }
     
-    int scht = 0;
-    while (NextSet(a, n)) {
+    while (NextSet(a, 10)) {
         int ans1 = 0;
         int ans2 = 0;
         memset(upper, 0, sizeof(upper));
-        scht++;
-        show(a, n, numbers, letId);
+        show(a, 10, numbers, letId);
 
         int sum = 0;
         upper[sizeAns] = 0;
@@ -211,7 +194,7 @@ int main() {
                 if (upper[sizeAns] > 0) {
 
                     if (sum + upper[sizeAns] >= 10) {
-                        //sizeAns--;
+                       
                         goto check;
                     }
                     else {
@@ -222,7 +205,7 @@ int main() {
 
                 sizeAns--;
 
-                // if(sizeAns==0)
+               
             }
             else {
             check:
@@ -286,7 +269,7 @@ int main() {
         }
         if (ans1 == ans2) {
             float end_time = clock();
-            printf("Ответ найден: \nans1=%d\nans2=%d", ans1, ans2);
+            printf("Answer: \nans1=%d\nans2=%d", ans1, ans2);
             printf("\ntime = %.4f sec", (end_time - start_time) / CLOCKS_PER_SEC);
             scanf("%d", &i);
             return 0;
