@@ -112,6 +112,23 @@ int main() {
     int a[11];
     a[0] = 1; a[1] = 0; a[2] = 2; a[3] = 3; a[4] = 4; a[5] = 5; a[6] = 6; a[7] = 7; a[8] = 8; a[9] = 9;
     show(a, n, numbers, letId);
+    
+        int noSwap;
+        for (int k = i; k >= 0; k--)
+        {
+            noSwap = 1;
+            for (int k1 = 0; k1 < k; k1++) {
+                char temp[10];
+                int i1 = strlen(words[k1 + 1]);
+                int i2 = strlen(words[k1]);
+                if (i2 > i1) {
+                    strcpy(temp, words[k1 + 1]);
+                    strcpy(words[k1 + 1], words[k1]);
+                    strcpy(words[k1], temp);
+                }
+            }
+        }
+    
     int scht = 0;
     while (NextSet(a, n)) {
         int ans1 = 0;
@@ -128,22 +145,6 @@ int main() {
         sizeAns = strlen(words[i + 1]) - 1;
 
         char words2[10][10];
-        int tmp;
-        int noSwap;
-        for (int k = i; k >= 0; k--)
-        {
-            noSwap = 1;
-            for (int k1 = 0; k1 < k; k1++) {
-                char temp[10];
-                int i1 = strlen(words[k1 + 1]);
-                int i2 = strlen(words[k1]);
-                if (i2 > i1) {
-                    strcpy(temp, words[k1 + 1]);
-                    strcpy(words[k1 + 1], words[k1]);
-                    strcpy(words[k1], temp);
-                }
-            }
-        }
         unsigned int cntLetters[8];
         //считаем количество букв в словах до "="
         for (int k = i; k >= 0; k--) {
